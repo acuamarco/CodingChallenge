@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 
 namespace CodingChallenge.Web
 {
@@ -10,6 +9,13 @@ namespace CodingChallenge.Web
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.MediaTypeMappings.Add(
+                new System.Net.Http.Formatting.RequestHeaderMapping("Accept", "text/html", StringComparison.InvariantCultureIgnoreCase, true, "application/json")
+            );
+
+            // Use camel case for JSON data
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
