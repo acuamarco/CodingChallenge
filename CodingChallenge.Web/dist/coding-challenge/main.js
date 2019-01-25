@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<kendo-dropdownlist [data]=\"userList\" [textField]=\"'name'\" [valueField]=\"'id'\" [value]=\"defaultUser\"  (valueChange)=\"valueChange($event)\">\r\n</kendo-dropdownlist>\r\n"
+module.exports = "\r\nUser name:\r\n<kendo-dropdownlist [data]=\"userList\" [textField]=\"'name'\" [valueField]=\"'id'\" [value]=\"defaultUser\"  (valueChange)=\"valueChange($event)\">\r\n</kendo-dropdownlist>\r\n\r\n<kendo-grid [data]=\"projectList\">\r\n  <kendo-grid-column field=\"id\" title=\"ID\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-column field=\"startDate\" title=\"Start Date\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-column field=\"timeToStart\" title=\"Time to Start\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-column field=\"endDate\" title=\"End Date\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-column field=\"credits\" title=\"Credits\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-column field=\"status\" title=\"Status\">\r\n  </kendo-grid-column>\r\n</kendo-grid>\r\n"
 
 /***/ }),
 

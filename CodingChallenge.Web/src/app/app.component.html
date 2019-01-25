@@ -1,2 +1,23 @@
-<kendo-dropdownlist [data]="userList" [textField]="'name'" [valueField]="'id'" [value]="defaultUser"  (valueChange)="valueChange($event)">
-</kendo-dropdownlist>
+<div>
+  <div>
+    <div>
+      User name:
+    </div>
+    <kendo-dropdownlist [data]="userList" [textField]="'name'" [valueField]="'id'" [value]="defaultUser" (valueChange)="valueChange($event)">
+    </kendo-dropdownlist>
+  </div>
+  <kendo-grid [data]="projectList">
+    <kendo-grid-column field="id" title="ID">
+    </kendo-grid-column>
+    <kendo-grid-column field="startDate" title="Start Date">
+    </kendo-grid-column>
+    <kendo-grid-column field="timeToStart" title="Time to Start">
+    </kendo-grid-column>
+    <kendo-grid-column field="endDate" title="End Date">
+    </kendo-grid-column>
+    <kendo-grid-column field="credits" title="Credits">
+    </kendo-grid-column>
+    <kendo-grid-column field="status" title="Status">
+    </kendo-grid-column>
+  </kendo-grid>
+</div>
