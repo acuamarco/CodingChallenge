@@ -3,7 +3,6 @@ import { AppComponent } from './app.component';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { UserService } from './user.service';
-import { ProjectService } from './project.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,7 +15,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      providers: [UserService, ProjectService]
+      providers: [UserService]
     }).compileComponents();
   }));
 

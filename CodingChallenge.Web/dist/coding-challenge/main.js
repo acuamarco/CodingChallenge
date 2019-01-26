@@ -58,17 +58,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm5/Rx.js");
-/* harmony import */ var src_app_project_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/project.service */ "./src/app/project.service.ts");
-/* harmony import */ var src_app_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/user.service */ "./src/app/user.service.ts");
-
+/* harmony import */ var src_app_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/user.service */ "./src/app/user.service.ts");
 
 
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(userService, projectService) {
+    function AppComponent(userService) {
         this.userService = userService;
-        this.projectService = projectService;
         this.title = 'Coding Challenge - Marco Rodriguez';
         this.defaultUser = { name: "--", id: 0 };
     }
@@ -90,7 +87,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.getProjects = function (userId) {
         this.projectList = [];
         var c = this;
-        this.projectService.getProjectsByUser(userId).subscribe(function (data) {
+        this.userService.getProjectsByUser(userId).subscribe(function (data) {
             c.projectList = data;
         }, function (error) {
             console.error("Error reading the list of projects");
@@ -106,7 +103,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], src_app_project_service__WEBPACK_IMPORTED_MODULE_3__["ProjectService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -134,9 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _progress_kendo_angular_grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @progress/kendo-angular-grid */ "./node_modules/@progress/kendo-angular-grid/dist/es/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_project_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/project.service */ "./src/app/project.service.ts");
-/* harmony import */ var src_app_user_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/user.service */ "./src/app/user.service.ts");
-
+/* harmony import */ var src_app_user_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/user.service */ "./src/app/user.service.ts");
 
 
 
@@ -164,49 +159,12 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
             ],
             providers: [
-                src_app_user_service__WEBPACK_IMPORTED_MODULE_10__["UserService"],
-                src_app_project_service__WEBPACK_IMPORTED_MODULE_9__["ProjectService"]
+                src_app_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/project.service.ts":
-/*!************************************!*\
-  !*** ./src/app/project.service.ts ***!
-  \************************************/
-/*! exports provided: ProjectService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectService", function() { return ProjectService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-
-
-
-
-var ProjectService = /** @class */ (function () {
-    function ProjectService(http) {
-        this.http = http;
-    }
-    ProjectService.prototype.getProjectsByUser = function (userId) {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api_endpoint + 'user/' + userId + '/projects');
-    };
-    ProjectService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-    ], ProjectService);
-    return ProjectService;
 }());
 
 
@@ -237,6 +195,9 @@ var UserService = /** @class */ (function () {
     }
     UserService.prototype.getUsers = function () {
         return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api_endpoint + 'user');
+    };
+    UserService.prototype.getProjectsByUser = function (userId) {
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api_endpoint + 'user/' + userId + '/projects');
     };
     UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),

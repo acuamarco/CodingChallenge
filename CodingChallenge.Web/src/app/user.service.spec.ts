@@ -35,4 +35,21 @@ describe('UserService', () => {
       req.flush(mockUsers);
     });
   });
+
+  describe('#getProjectsByUser', () => {
+    it('should return an Observable<Project[]>', () => {
+
+      const mockProjects = [{ id: 1, startDate: "1/1/2019", timeToStart: "Started", endDate: "2/2/2019", status: "Active", credits: 1 }];
+
+      service.getProjectsByUser(1).subscribe(projects => {
+        expect(projects.length).toBe(1);
+        expect(projects).toEqual(mockProjects);
+      });
+
+      const req = httpMock.expectOne(environment.api_endpoint + 'user/1/projects');
+      expect(req.request.method).toBe("GET");
+      req.flush(mockProjects);
+    });
+  });
+
 });

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Project } from 'src/app/project';
-import { ProjectService } from 'src/app/project.service';
 import { User } from 'src/app/user';
 import { UserService } from 'src/app/user.service';
 
@@ -17,7 +16,7 @@ export class AppComponent {
   public projectList: Array<Project>;
   public userList: Array<User>;
   
-  constructor(private userService: UserService, private projectService: ProjectService) {
+  constructor(private userService: UserService) {
     this.defaultUser = { name: "--", id: 0 };
   }
   
@@ -44,7 +43,7 @@ export class AppComponent {
   private getProjects(userId: number) {
     this.projectList = [];
     let c = this;
-    this.projectService.getProjectsByUser(userId).subscribe(
+    this.userService.getProjectsByUser(userId).subscribe(
       data => {
         c.projectList = data;
       },
