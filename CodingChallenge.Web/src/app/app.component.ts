@@ -27,10 +27,11 @@ export class AppComponent {
 
   private getUsers() {
     this.userList = [this.defaultUser];
+    let c = this;
     this.userService.getUsers().subscribe(
       data => {
         data.forEach(function(user) {
-          this.userList.push(user);
+          c.userList.push(user);
         });
       },
       error => {
@@ -42,9 +43,10 @@ export class AppComponent {
 
   private getProjects(userId: number) {
     this.projectList = [];
-    this.projectService.getProjects(userId).subscribe(
+    let c = this;
+    this.projectService.getProjectsByUser(userId).subscribe(
       data => {
-        this.projectList = data;
+        c.projectList = data;
       },
       error => {
         console.error("Error reading the list of projects");

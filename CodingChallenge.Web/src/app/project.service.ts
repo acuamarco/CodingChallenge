@@ -8,7 +8,7 @@ export class ProjectService {
 
   constructor(private http: HttpClient) { }
 
-  public getProjects(userId: number) {
-    return this.http.get<Array<Project>>(environment.api_endpoint + 'project/' + userId);
+  public getProjectsByUser(userId: number) {
+    return this.http.get<Array<Project>>(environment.api_endpoint + 'user/' + userId + '/projects');
   }
 }
