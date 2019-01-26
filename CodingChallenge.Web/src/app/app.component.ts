@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/User';
-import { Project } from 'src/app/Project';
+import { Observable } from 'rxjs/Rx';
+import { Project } from 'src/app/project';
+import { ProjectService } from 'src/app/project.service';
+import { User } from 'src/app/user';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,25 +13,47 @@ import { Project } from 'src/app/Project';
 export class AppComponent {
   title = 'Coding Challenge - Marco Rodriguez';
 
-  public defaultUser: User = { name: "--", id: 0 };
-
-  public userList: Array<User> = [
-    this.defaultUser,
-    { name: "User 1", id: 1 },
-    { name: "User 2", id: 2 },
-    { name: "User 3", id: 3 }
-  ];
-
-  public projectList: Array<Project> = [
-    { id: 1, startDate: "1/1/2019", timeToStart: "Started", endDate: "1/1/2020", credits: 2, status: "Active" },
-    { id: 2, startDate: "2/2/2019", timeToStart: "15", endDate: "1/1/2021", credits: 3, status: "Inactive" },
-  ];
-
+  public defaultUser: User;
+  public projectList: Array<Project>;
+  public userList: Array<User>;
+  
+  constructor(private userService: UserService, private projectService: ProjectService) {
+    this.defaultUser = { name: "--", id: 0 };
+  }
+  
   public valueChange(value: User): void {
-    this.log('valueChange', value.name);
+    this.getProjects(value.id);
   }
 
-  private log(event: string, arg: any): void {
-    console.log(`${event} ${arg || ''}`);
+  private getUsers() {
+    this.userList = [this.defaultUser];
+    this.userService.getUsers().subscribe(
+      data => {
+        data.forEach(function(user) {
+          this.userList.push(user);
+        });
+      },
+      error => {
+        console.error("Error reading the list of users");
+        return Observable.throw(error);
+      }
+    );
+  }
+
+  private getProjects(userId: number) {
+    this.projectList = [];
+    this.projectService.getProjects(userId).subscribe(
+      data => {
+        this.projectList = data;
+      },
+      error => {
+        console.error("Error reading the list of projects");
+        return Observable.throw(error);
+      }
+    );
+  }
+
+  ngOnInit() {
+    this.getUsers();
   }
 }

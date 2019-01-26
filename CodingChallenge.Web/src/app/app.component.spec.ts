@@ -1,12 +1,22 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { UserService } from './user.service';
+import { ProjectService } from './project.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        DropDownsModule,
+        GridModule,
+        HttpClientTestingModule
+      ],
       declarations: [
         AppComponent
       ],
+      providers: [UserService, ProjectService]
     }).compileComponents();
   }));
 
@@ -19,13 +29,6 @@ describe('AppComponent', () => {
   it(`should have as title 'coding-challenge'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('coding-challenge');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to coding-challenge!');
+    expect(app.title).toEqual('Coding Challenge - Marco Rodriguez');
   });
 });
