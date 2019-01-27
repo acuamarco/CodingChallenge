@@ -15,6 +15,8 @@ namespace CodingChallenge.Repository
             UserProjects = new HashSet<UserProject>();
         }
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
