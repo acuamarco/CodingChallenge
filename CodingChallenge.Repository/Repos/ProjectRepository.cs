@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Data.Entity;
+using CodingChallenge.Repository.Model;
 
 namespace CodingChallenge.Repository.Repos
 {

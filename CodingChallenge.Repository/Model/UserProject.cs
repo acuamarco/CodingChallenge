@@ -1,11 +1,9 @@
-namespace CodingChallenge.Repository
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace CodingChallenge.Repository.Model
+{
     [Table("UserProject")]
     public partial class UserProject
     {

@@ -1,14 +1,11 @@
+using System.Data.Entity;
+using CodingChallenge.Repository.Model;
+
 namespace CodingChallenge.Repository
 {
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-
     public partial class CodingChallengeContext : DbContext
     {
-        public CodingChallengeContext()
-            : base("name=cc_db")
+        public CodingChallengeContext() : base("name=cc_db")
         {
         }
 

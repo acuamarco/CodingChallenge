@@ -1,4 +1,5 @@
 ﻿using System;
+using CodingChallenge.Repository.Model;
 
 namespace CodingChallenge.Repository.Tests.Helpers
 {

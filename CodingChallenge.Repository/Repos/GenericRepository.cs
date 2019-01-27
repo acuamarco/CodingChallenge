@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading.Tasks;
 
-namespace CodingChallenge.Repository
+namespace CodingChallenge.Repository.Repos
 {
-
     public abstract class GenericRepository<T> : IGenericRepository<T>
         where T : class, new()
     {
