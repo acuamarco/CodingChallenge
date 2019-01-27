@@ -2,3 +2,4 @@
 /obj
 /node_modules
 /dist/coding-challenge/*.map
+package-lock.json
