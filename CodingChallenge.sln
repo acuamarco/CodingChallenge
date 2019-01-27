@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Web", "Codi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Web.Tests", "CodingChallenge.Web.Tests\CodingChallenge.Web.Tests.csproj", "{65931827-C5E7-4607-AE97-D799BEBC3720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Repository", "CodingChallenge.Repository\CodingChallenge.Repository.csproj", "{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{65931827-C5E7-4607-AE97-D799BEBC3720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65931827-C5E7-4607-AE97-D799BEBC3720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65931827-C5E7-4607-AE97-D799BEBC3720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
