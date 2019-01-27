@@ -60,7 +60,7 @@
     <Compile Include="Helpers\BaseDataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadDataTest.cs" />
-    <Compile Include="Repos\ProjectRepositoryTests.cs" />
+    <Compile Include="Repos\UserProjectRepositoryTests.cs" />
     <Compile Include="Repos\UserRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
