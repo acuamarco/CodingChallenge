@@ -35,6 +35,7 @@ namespace CodingChallenge.Repository.Tests.Helpers
 
             AddUserProject(Db, new UserProject() { UserId = 1, ProjectId = 1, AssignedDate = DateTime.Now, IsActive = true });
             AddUserProject(Db, new UserProject() { UserId = 1, ProjectId = 2, AssignedDate = DateTime.Now, IsActive = false });
+            AddUserProject(Db, new UserProject() { UserId = 1, ProjectId = 5, AssignedDate = DateTime.Now, IsActive = false });
             AddUserProject(Db, new UserProject() { UserId = 2, ProjectId = 3, AssignedDate = DateTime.Now, IsActive = true });
             AddUserProject(Db, new UserProject() { UserId = 2, ProjectId = 4, AssignedDate = DateTime.Now, IsActive = false });
             AddUserProject(Db, new UserProject() { UserId = 3, ProjectId = 1, AssignedDate = DateTime.Now, IsActive = true });

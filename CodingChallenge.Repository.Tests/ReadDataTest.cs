@@ -6,32 +6,28 @@ using System.Linq;
 namespace CodingChallenge.Repository.Tests
 {
     [TestClass]
-    public class ReadDataTest : BaseTest
+    public class ReadDataTest : BaseDataTest
     {
 
-        public ReadDataTest()
-        {
-        }
-
         [TestMethod]
-        public void ShouldGetAllUsers()
+        public void ShouldGetAllUsersTest()
         {
             var users = Db.Users;
             Assert.AreEqual(3, users.ToList().Count);
         }
 
         [TestMethod]
-        public void ShouldGetAllProjects()
+        public void ShouldGetAllProjectsTest()
         {
             var projects = Db.Projects;
             Assert.AreEqual(5, projects.ToList().Count);
         }
 
         [TestMethod]
-        public void ShouldGetAllUserProjects()
+        public void ShouldGetAllUserProjectsTest()
         {
             var projects = Db.UserProjects;
-            Assert.AreEqual(6, projects.ToList().Count);
+            Assert.AreEqual(7, projects.ToList().Count);
         }
     }
 }
