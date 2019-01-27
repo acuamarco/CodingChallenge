@@ -7,6 +7,7 @@ namespace CodingChallenge.Services
         public static void Register(IServiceCollection services)
         {
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserProjectService, UserProjectService>();
         }
     }
 }
