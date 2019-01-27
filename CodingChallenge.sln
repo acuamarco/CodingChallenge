@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Repository.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Services", "CodingChallenge.Services\CodingChallenge.Services.csproj", "{80DFDA31-C1FA-4F25-9C82-6A15AF9E61B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{BF355BB0-D845-4645-8A28-0D43C35323F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{65931827-C5E7-4607-AE97-D799BEBC3720} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
+		{5A228BB0-F194-4DB4-BBD1-2787220B6EAD} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52AB92F1-E605-45AA-9F9D-387ACE6F8A3C}
