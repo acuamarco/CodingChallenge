@@ -225,7 +225,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    api_endpoint: "http://localhost:51296/api/"
+    api_endpoint: "http://localhost:55246/api/"
 };
 /*
  * For easier debugging in development mode, you can import the following file

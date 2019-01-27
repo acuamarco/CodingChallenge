@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Web", "CodingChallenge.Web\CodingChallenge.Web.csproj", "{ED5D2A82-2F30-4882-80D1-4C3398EB0DBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Web.Tests", "CodingChallenge.Web.Tests\CodingChallenge.Web.Tests.csproj", "{65931827-C5E7-4607-AE97-D799BEBC3720}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Repository", "CodingChallenge.Repository\CodingChallenge.Repository.csproj", "{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Repository.Tests", "CodingChallenge.Repository.Tests\CodingChallenge.Repository.Tests.csproj", "{5A228BB0-F194-4DB4-BBD1-2787220B6EAD}"
@@ -14,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Services", "CodingChallenge.Services\CodingChallenge.Services.csproj", "{80DFDA31-C1FA-4F25-9C82-6A15AF9E61B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{BF355BB0-D845-4645-8A28-0D43C35323F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Api", "CodingChallenge.Api\CodingChallenge.Api.csproj", "{22DF9775-F985-49A5-B264-FEB722134C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Api.Tests", "CodingChallenge.Api.Tests\CodingChallenge.Api.Tests.csproj", "{98932487-CDC6-400B-835E-6D2FFCDB0498}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +27,6 @@ Global
 		{ED5D2A82-2F30-4882-80D1-4C3398EB0DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED5D2A82-2F30-4882-80D1-4C3398EB0DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED5D2A82-2F30-4882-80D1-4C3398EB0DBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65931827-C5E7-4607-AE97-D799BEBC3720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65931827-C5E7-4607-AE97-D799BEBC3720}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65931827-C5E7-4607-AE97-D799BEBC3720}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65931827-C5E7-4607-AE97-D799BEBC3720}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F24C4E9F-0A73-4012-B27E-64AE83BD7BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,13 +39,21 @@ Global
 		{80DFDA31-C1FA-4F25-9C82-6A15AF9E61B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80DFDA31-C1FA-4F25-9C82-6A15AF9E61B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80DFDA31-C1FA-4F25-9C82-6A15AF9E61B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22DF9775-F985-49A5-B264-FEB722134C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22DF9775-F985-49A5-B264-FEB722134C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22DF9775-F985-49A5-B264-FEB722134C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22DF9775-F985-49A5-B264-FEB722134C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98932487-CDC6-400B-835E-6D2FFCDB0498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98932487-CDC6-400B-835E-6D2FFCDB0498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98932487-CDC6-400B-835E-6D2FFCDB0498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98932487-CDC6-400B-835E-6D2FFCDB0498}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{65931827-C5E7-4607-AE97-D799BEBC3720} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
 		{5A228BB0-F194-4DB4-BBD1-2787220B6EAD} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
+		{98932487-CDC6-400B-835E-6D2FFCDB0498} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52AB92F1-E605-45AA-9F9D-387ACE6F8A3C}

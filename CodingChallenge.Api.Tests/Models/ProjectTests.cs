@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CodingChallenge.Web.Models;
+using CodingChallenge.Api.Models;
 
-namespace CodingChallenge.Web.Tests.Models
+namespace CodingChallenge.Api.Tests.Models
 {
     [TestClass]
     public class ProjectTests

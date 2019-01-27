@@ -1,4 +1,4 @@
-﻿namespace CodingChallenge.Web.Models
+﻿namespace CodingChallenge.Api.Models
 {
     public class User
     {

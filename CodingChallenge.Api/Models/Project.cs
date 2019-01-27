@@ -1,6 +1,6 @@
 using System;
 
-namespace CodingChallenge.Web.Models
+namespace CodingChallenge.Api.Models
 {
     public class Project
     {

@@ -5,9 +5,9 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using CodingChallenge.Repository.Repos;
 using CodingChallenge.Services;
-using CodingChallenge.Web.Models;
+using CodingChallenge.Api.Models;
 
-namespace CodingChallenge.Web.Controllers
+namespace CodingChallenge.Api.Controllers
 {
   public class UserController : ApiController
   {
