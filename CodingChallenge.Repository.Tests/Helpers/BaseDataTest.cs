@@ -2,11 +2,11 @@
 
 namespace CodingChallenge.Repository.Tests.Helpers
 {
-    public class BaseTest : IDisposable
+    public class BaseDataTest : IDisposable
     {
         protected readonly CodingChallengeContext Db;
 
-        public BaseTest()
+        public BaseDataTest()
         {
             Db = new CodingChallengeContext();
             Reset();
