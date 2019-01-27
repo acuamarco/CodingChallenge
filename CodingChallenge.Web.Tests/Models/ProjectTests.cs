@@ -10,7 +10,7 @@ namespace CodingChallenge.Web.Tests.Models
         [TestMethod]
         public void TimeToStartInPastTest()
         {
-            var project = new Project() { StartDate = DateTime.Now.AddDays(-5) };
+            var project = new Project() { StartDate = DateTime.Now.AddDays(-5), AssignedDate = DateTime.Now };
 
             Assert.AreEqual("Started", project.TimeToStart);
         }
@@ -18,7 +18,7 @@ namespace CodingChallenge.Web.Tests.Models
         [TestMethod]
         public void TimeToStartSameDayTest()
         {
-            var project = new Project() { StartDate = DateTime.Now };
+            var project = new Project() { StartDate = DateTime.Now, AssignedDate = DateTime.Now };
 
             Assert.AreEqual("0", project.TimeToStart);
         }
@@ -26,7 +26,7 @@ namespace CodingChallenge.Web.Tests.Models
         [TestMethod]
         public void TimeToStartInFutureTest()
         {
-            var project = new Project() { StartDate = DateTime.Now.AddDays(3) };
+            var project = new Project() { StartDate = DateTime.Now.AddDays(3), AssignedDate = DateTime.Now };
 
             Assert.AreEqual("3", project.TimeToStart);
         }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CodingChallenge.Services
 {
-    class UserProjectService : GenericService<UserProject>, IUserProjectService
+    public class UserProjectService : GenericService<UserProject>, IUserProjectService
     {
-
         public UserProjectService(IUserProjectRepository repo) : base(repo)
         {
         }

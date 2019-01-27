@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CodingChallenge.Web.Models
 {
@@ -6,12 +6,13 @@ namespace CodingChallenge.Web.Models
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
+        public DateTime AssignedDate { get; set; }
         public string TimeToStart
         {
             get
             {
-                if (StartDate.Date >= DateTime.Now.Date) {
-                    return StartDate.Subtract(DateTime.Now).Days.ToString();
+                if (StartDate.Date >= AssignedDate.Date) {
+                    return StartDate.Subtract(AssignedDate).Days.ToString();
                 }
                 else
                 {

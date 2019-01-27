@@ -4,7 +4,7 @@ using CodingChallenge.Repository.Model;
 
 namespace CodingChallenge.Repository.Repos
 {
-    public class UserProjectRepository : GenericRepository<Project>, IUserProjectRepository
+    public class UserProjectRepository : GenericRepository<UserProject>, IUserProjectRepository
     {
         public UserProjectRepository(CodingChallengeContext dbContext)
         {

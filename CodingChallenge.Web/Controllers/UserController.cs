@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using CodingChallenge.Repository.Repos;
+using CodingChallenge.Services;
 using CodingChallenge.Web.Models;
 
 namespace CodingChallenge.Web.Controllers
@@ -12,33 +14,42 @@ namespace CodingChallenge.Web.Controllers
     [ResponseType(typeof(List<User>))]
     public async Task<IHttpActionResult> Get()
     {
-      var users = await _GetUsers();
-      return Ok(users);
+      var dbContext = new Repository.CodingChallengeContext();
+      var userRepo = new UserRepository(dbContext);
+      var userService = new UserService(userRepo);
+
+      var repoUsers = await userService.GetAll();
+      var webUsers = new List<User>();
+      foreach (var repoUser in repoUsers)
+      {
+        webUsers.Add(new User() { Id = repoUser.Id, FirstName = repoUser.FirstName, LastName = repoUser.LastName });
+      }
+      return Ok(webUsers);
     }
 
     [ResponseType(typeof(List<Project>))]
     [Route("api/user/{userId}/projects")]
     public async Task<IHttpActionResult> GetProjects(int userId)
     {
-      var projects = await _GetProjects(userId);
-      return Ok(projects);
-    }
+      var dbContext = new Repository.CodingChallengeContext();
+      var userProjectRepo = new UserProjectRepository(dbContext);
+      var userProjectService = new UserProjectService(userProjectRepo);
 
-    private async Task<IEnumerable<User>> _GetUsers()
-    {
-      return await Task.FromResult(new List<User>()
-            {
-                new User() { Id = 1, FirstName = "User", LastName = "1" },
-                new User() { Id = 1, FirstName = "User", LastName = "2" }
-            });
-    }
-
-    private async Task<IEnumerable<Project>> _GetProjects(int userId)
-    {
-      return await Task.FromResult(new List<Project>()
+      var repoUserProjects = await userProjectService.GetByUserId(userId);
+      var webProjects = new List<Project>();
+      foreach (var repoUserProject in repoUserProjects)
       {
-        new Project() {Id = 1, StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(1), Credits = 1, IsActive = true }
-      });
+        webProjects.Add(new Project()
+        {
+          Id = repoUserProject.ProjectId,
+          StartDate = repoUserProject.Project.StartDate,
+          AssignedDate = repoUserProject.AssignedDate,
+          EndDate = repoUserProject.Project.EndDate,
+          Credits = repoUserProject.Project.Credits,
+          IsActive = repoUserProject.IsActive
+        });
+      }
+      return Ok(webProjects);
     }
   }
 }
