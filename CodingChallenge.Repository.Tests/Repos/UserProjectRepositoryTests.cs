@@ -14,7 +14,9 @@ namespace CodingChallenge.Repository.Tests.Repos
             var repo = new UserProjectRepository(Db);
             Assert.AreEqual(3, repo.GetByUserId(1).ToList().Count);
             Assert.AreEqual(2, repo.GetByUserId(2).ToList().Count);
-            Assert.AreEqual(2, repo.GetByUserId(3).ToList().Count);
+            var userProjects = repo.GetByUserId(3).ToList();
+            Assert.AreEqual(2, userProjects.Count);
+            Assert.IsNotNull(userProjects[0].Project, "Project information should be loaded");
         }
     }
 }
