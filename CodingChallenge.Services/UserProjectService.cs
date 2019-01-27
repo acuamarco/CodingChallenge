@@ -1,7 +1,7 @@
 ﻿using CodingChallenge.Repository.Model;
 using CodingChallenge.Repository.Repos;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Data.Entity;
 
 using System.Threading.Tasks;
 
