@@ -1,32 +1,44 @@
-﻿using System.Data.Entity;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using CodingChallenge.Repository.Tests.Helpers;
 using System.Linq;
 
 namespace CodingChallenge.Repository.Tests
 {
-    [TestClass]
-    public class ReadDataTest : BaseDataTest
+    public class ReadDataTest
     {
+        private CodingChallengeContext context;
 
-        [TestMethod]
+        [SetUp]
+        public void Initialize()
+        {
+            context = ContextFactory.CreateContext();
+        }
+
+        [TearDown]
+        public void Cleanup()
+        {
+            context.Dispose();
+            context = null;
+        }
+
+        [Test]
         public void ShouldGetAllUsersTest()
         {
-            var users = Db.Users;
+            var users = context.Users;
             Assert.AreEqual(3, users.ToList().Count);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldGetAllProjectsTest()
         {
-            var projects = Db.Projects;
+            var projects = context.Projects;
             Assert.AreEqual(5, projects.ToList().Count);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldGetAllUserProjectsTest()
         {
-            var projects = Db.UserProjects;
+            var projects = context.UserProjects;
             Assert.AreEqual(7, projects.ToList().Count);
         }
     }
