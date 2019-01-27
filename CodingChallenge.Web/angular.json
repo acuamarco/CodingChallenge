@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "coding-challenge": {
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
@@ -46,14 +46,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },

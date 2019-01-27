@@ -1,6 +1,2 @@
 .vs/*
 packages/*
-CodingChallenge.Web/bin/*
-CodingChallenge.Web/obj/*
-CodingChallenge.Web.Tests/bin/*
-CodingChallenge.Web.Tests/obj/*

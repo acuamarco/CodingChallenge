@@ -6,7 +6,7 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { UserService } from 'src/app/user.service';
+import { UserService } from './user.service';
 
 
 @NgModule({
