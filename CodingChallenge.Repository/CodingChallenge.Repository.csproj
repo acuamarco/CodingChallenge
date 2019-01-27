@@ -51,10 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodingChallengeContext.cs" />
-    <Compile Include="Project.cs" />
+    <Compile Include="Repos\GenericRepository.cs" />
+    <Compile Include="Repos\IGenericRepository.cs" />
+    <Compile Include="Repos\IProjectRepository.cs" />
+    <Compile Include="Repos\IUserRepository.cs" />
+    <Compile Include="Model\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserProject.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserProject.cs" />
+    <Compile Include="Repos\ProjectRepository.cs" />
+    <Compile Include="Repos\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
