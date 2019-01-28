@@ -26,6 +26,8 @@ namespace CodingChallenge.Api.Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddSingleton<IDataSeed>(new DataSeed());
             RepositoryModule.Register(services,
                 Configuration.GetConnectionString("DefaultConnection"),
