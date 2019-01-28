@@ -27,7 +27,6 @@ namespace CodingChallenge.Api.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-
             services.AddSingleton<IDataSeed>(new DataSeed());
             RepositoryModule.Register(services,
                 Configuration.GetConnectionString("DefaultConnection"),
@@ -43,7 +42,14 @@ namespace CodingChallenge.Api.Core
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCorsMiddleware();
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
+            });
             app.UseMvc();
         }
     }

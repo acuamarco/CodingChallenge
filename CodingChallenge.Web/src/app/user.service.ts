@@ -7,13 +7,22 @@ import { environment } from '../environments/environment';
 @Injectable()
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  public getUsers() {
-    return this.http.get<Array<User>>(environment.api_endpoint + 'user');
-  }
+    private httpOptions = {
+        headers: new HttpHeaders({
+            'Access-Control-Allow-Origin': '*',
+            'Authorization': 'authkey',
+            'userid': '1'
+        })
+    };
 
-  public getProjectsByUser(userId: number) {
-    return this.http.get<Array<Project>>(environment.api_endpoint + 'user/' + userId + '/projects');
-  }
+    public getUsers() {
+        return this.http.get<Array<User>>(environment.api_endpoint + 'user', this.httpOptions);
+    }
+
+    public getProjectsByUser(userId: number) {
+        
+        return this.http.get<Array<Project>>(environment.api_endpoint + 'user/' + userId + '/projects', this.httpOptions);
+    }
 }

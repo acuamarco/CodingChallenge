@@ -3,10 +3,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CodingChallenge.Services;
 using CodingChallenge.Api.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace CodingChallenge.Api.Controllers
 {
     [Route("api")]
+    [EnableCors("CorsPolicy")]
     public class UserController : ControllerBase
     {
         private readonly IUserService userService;
