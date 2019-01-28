@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace CodingChallenge.WebUI
+namespace CodingChallenge.Web
 {
     public class Startup
     {

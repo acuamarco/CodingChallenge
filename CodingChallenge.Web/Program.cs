@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace CodingChallenge.WebUI
+namespace CodingChallenge.Web
 {
     public class Program
     {

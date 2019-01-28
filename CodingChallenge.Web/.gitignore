@@ -1,6 +1,6 @@
 /bin
 /obj
 /node_modules
-/dist/coding-challenge/*.map
-/dist/out-tsc/*
+/wwwroot/clientapp/dist/*.map
+/wwwroot/clientapp/out-tsc/*
 package-lock.json
