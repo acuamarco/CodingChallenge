@@ -1,25 +1,26 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Description;
-using CodingChallenge.Repository.Repos;
+using Microsoft.AspNetCore.Mvc;
 using CodingChallenge.Services;
 using CodingChallenge.Api.Models;
 
 namespace CodingChallenge.Api.Controllers
 {
-    public class UserController : ApiController
+    [Route("api")]
+    public class UserController : ControllerBase
     {
-        [ResponseType(typeof(List<User>))]
-        public async Task<IHttpActionResult> Get()
+        private readonly IUserService userService;
+        private readonly IUserProjectService userProjectService;
+
+        public UserController(IUserService userService, IUserProjectService userProjectService)
         {
-            /**/
-            //TODO: dependency injection
-            var dbContext = new Repository.CodingChallengeContext();
-            var userRepo = new UserRepository(dbContext);
-            var userService = new UserService(userRepo);
-            /**/
+            this.userService = userService;
+            this.userProjectService = userProjectService;
+        }
+
+        [HttpGet("user")]
+        public async Task<IActionResult> GetUsers()
+        {
             var repoUsers = await userService.GetAll();
             var webUsers = new List<User>();
             foreach (var repoUser in repoUsers)
@@ -28,17 +29,10 @@ namespace CodingChallenge.Api.Controllers
             }
             return Ok(webUsers);
         }
-
-        [ResponseType(typeof(List<Project>))]
-        [Route("api/user/{userId}/projects")]
-        public async Task<IHttpActionResult> GetProjects(int userId)
+        
+        [HttpGet("user/{userId}/projects")]
+        public async Task<IActionResult> GetProjects(int userId)
         {
-            /**/
-            //TODO: dependency injection
-            var dbContext = new Repository.CodingChallengeContext();
-            var userProjectRepo = new UserProjectRepository(dbContext);
-            var userProjectService = new UserProjectService(userProjectRepo);
-            /**/
             var repoUserProjects = await userProjectService.GetByUserId(userId);
             var webProjects = new List<Project>();
             foreach (var repoUserProject in repoUserProjects)
