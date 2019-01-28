@@ -25,16 +25,20 @@ namespace CodingChallenge.Repository
         {
             modelBuilder.Entity<Project>().HasKey(e => e.Id);
             modelBuilder.Entity<Project>().HasMany(e => e.UserProjects);
-            modelBuilder.Entity<Project>().HasData(dataSeed.GetProjects());
 
             modelBuilder.Entity<User>().HasKey(e => e.Id);
             modelBuilder.Entity<User>().Property(e => e.FirstName).IsUnicode(false);
             modelBuilder.Entity<User>().Property(e => e.LastName).IsUnicode(false);
             modelBuilder.Entity<User>().HasMany(e => e.UserProjects);
-            modelBuilder.Entity<User>().HasData(dataSeed.GetUsers());
 
             modelBuilder.Entity<UserProject>().HasKey(e => new { e.UserId, e.ProjectId});
-            modelBuilder.Entity<UserProject>().HasData(dataSeed.GetUserProjects());
+
+            if (dataSeed != null)
+            {
+                modelBuilder.Entity<User>().HasData(dataSeed.GetUsers());
+                modelBuilder.Entity<Project>().HasData(dataSeed.GetProjects());
+                modelBuilder.Entity<UserProject>().HasData(dataSeed.GetUserProjects());
+            }
 
             base.OnModelCreating(modelBuilder);
         }

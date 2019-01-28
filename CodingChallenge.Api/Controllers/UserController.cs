@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Cors;
 namespace CodingChallenge.Api.Controllers
 {
     [Route("api")]
-    [EnableCors("CorsPolicy")]
     public class UserController : ControllerBase
     {
         private readonly IUserService userService;
