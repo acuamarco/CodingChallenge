@@ -2,4 +2,5 @@
 /obj
 /node_modules
 /dist/coding-challenge/*.map
+/dist/out-tsc/*
 package-lock.json
