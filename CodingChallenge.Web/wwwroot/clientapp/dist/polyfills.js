@@ -5504,7 +5504,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Marco\Trabajo\Entrevistas\Greenslate\CodingChallenge\CodingChallenge.Web\src\polyfills.ts */"./polyfills.ts");
+__webpack_require__(/*! C:\Marco\Trabajo\Entrevistas\Greenslate\CodingChallenge\CodingChallenge.Web\ClientApp\polyfills.ts */"./polyfills.ts");
 module.exports = __webpack_require__(/*! C:\Marco\Trabajo\Entrevistas\Greenslate\CodingChallenge\CodingChallenge.Web\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */"../node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
 
 
