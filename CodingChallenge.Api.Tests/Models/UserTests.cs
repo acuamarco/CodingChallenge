@@ -1,12 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using CodingChallenge.Api.Models;
 
 namespace CodingChallenge.Api.Tests.Models
 {
-    [TestClass]
     public class UserTests
     {
-        [TestMethod]
+        [Test]
         public void FirstNameNullShouldReturnEmptyStringTest()
         {
             var user = new User() { FirstName = null };
@@ -14,7 +13,7 @@ namespace CodingChallenge.Api.Tests.Models
             Assert.AreEqual(string.Empty, user.FirstName);
         }
 
-        [TestMethod]
+        [Test]
         public void FirstNameShouldReturnTrimmedTest()
         {
             var user = new User() { FirstName = " first " };
@@ -22,7 +21,7 @@ namespace CodingChallenge.Api.Tests.Models
             Assert.AreEqual("first", user.FirstName);
         }
 
-        [TestMethod]
+        [Test]
         public void LastNameNullShouldReturnEmptyStringTest()
         {
             var user = new User() { LastName = null };
@@ -30,7 +29,7 @@ namespace CodingChallenge.Api.Tests.Models
             Assert.AreEqual(string.Empty, user.LastName);
         }
 
-        [TestMethod]
+        [Test]
         public void LastNameShouldReturnTrimmedTest()
         {
             var user = new User() { LastName = " last " };
@@ -38,7 +37,7 @@ namespace CodingChallenge.Api.Tests.Models
             Assert.AreEqual("last", user.LastName);
         }
 
-        [TestMethod]
+        [Test]
         public void NameShouldConcatenateFirstAndLastTest()
         {
             var user = new User() {FirstName = " first ", LastName = " last "};

@@ -1,37 +1,39 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CodingChallenge.Api.Models;
+using NUnit.Framework;
 
 namespace CodingChallenge.Api.Tests.Models
 {
-    [TestClass]
     public class ProjectTests
     {
-        [TestMethod]
+        [Test]
         public void TimeToStartInPastTest()
         {
-            var project = new Project() { StartDate = DateTime.Now.AddDays(-5), AssignedDate = DateTime.Now };
+            var date = DateTime.Now;
+            var project = new Project() { StartDate = date.AddDays(-5), AssignedDate = date };
 
             Assert.AreEqual("Started", project.TimeToStart);
         }
 
-        [TestMethod]
+        [Test]
         public void TimeToStartSameDayTest()
         {
-            var project = new Project() { StartDate = DateTime.Now, AssignedDate = DateTime.Now };
+            var date = DateTime.Now;
+            var project = new Project() { StartDate = date, AssignedDate = date };
 
             Assert.AreEqual("0", project.TimeToStart);
         }
 
-        [TestMethod]
+        [Test]
         public void TimeToStartInFutureTest()
         {
-            var project = new Project() { StartDate = DateTime.Now.AddDays(3), AssignedDate = DateTime.Now };
+            var date = DateTime.Now;
+            var project = new Project() { StartDate = date.AddDays(3), AssignedDate = date };
 
             Assert.AreEqual("3", project.TimeToStart);
         }
 
-        [TestMethod]
+        [Test]
         public void IsActiveTest()
         {
             var project = new Project() { IsActive = true };
@@ -39,7 +41,7 @@ namespace CodingChallenge.Api.Tests.Models
             Assert.AreEqual("Active", project.Status);
         }
 
-        [TestMethod]
+        [Test]
         public void IsInactiveTest()
         {
             var project = new Project() { IsActive = false };
