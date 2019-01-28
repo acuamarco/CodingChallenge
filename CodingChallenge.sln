@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallenge.Api", "Codi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallenge.Api.Tests", "CodingChallenge.Api.Tests\CodingChallenge.Api.Tests.csproj", "{A682D6F7-05D1-497E-AA22-3CBC54DABC34}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallenge.Services.Tests", "CodingChallenge.Services.Tests\CodingChallenge.Services.Tests.csproj", "{8E962A37-8B8B-499F-8C70-2E6D3F7861BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{A682D6F7-05D1-497E-AA22-3CBC54DABC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A682D6F7-05D1-497E-AA22-3CBC54DABC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A682D6F7-05D1-497E-AA22-3CBC54DABC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E962A37-8B8B-499F-8C70-2E6D3F7861BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E962A37-8B8B-499F-8C70-2E6D3F7861BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E962A37-8B8B-499F-8C70-2E6D3F7861BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E962A37-8B8B-499F-8C70-2E6D3F7861BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{554BDBD1-DF69-43CC-A329-7B91E508E697} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
 		{A682D6F7-05D1-497E-AA22-3CBC54DABC34} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
+		{8E962A37-8B8B-499F-8C70-2E6D3F7861BA} = {BF355BB0-D845-4645-8A28-0D43C35323F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52AB92F1-E605-45AA-9F9D-387ACE6F8A3C}
